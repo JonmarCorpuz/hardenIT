@@ -12,7 +12,7 @@
 | /etc/cron.hourly | | CRON_HARDENING=true |
 | /etc/cron.daily | | CRON_HARDENING=true |
 | /etc/cron.weekly | | CRON_HARDENING=true |
-| /etc/cron.nonthly | | CRON_HARDENING=true |
+| /etc/cron.monthly | | CRON_HARDENING=true |
 | /etc/systemd/coredump.conf | | PROCESS_HARDENING=true |
 | /boot/grub/grub.cfg | | BOOTLOADER_HARDENING=true |
 | /etc/motd | | BANNER_HARDENING=true |

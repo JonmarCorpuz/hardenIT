@@ -39,3 +39,7 @@
 | `WARNING` | |
 | `PASS` | |
 | `FAIL` | |
+
+# Contributors 
+
+[Jonmar Corpuz](https://www.linkedin.com/in/jonmarcorpuz/)

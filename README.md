@@ -4,7 +4,7 @@
 
 ## hardenUbuntu
 
-| [hardenCron](https://github.com/JonmarCorpuz/hardenIT/blob/main/Scripts/hardenCron.sh) | [hardenProcesses](https://github.com/JonmarCorpuz/hardenIT/blob/main/Scripts/hardenProcesses.sh) | [hardenSSH](https://github.com/JonmarCorpuz/hardenIT/blob/main/Scripts/hardenSSH.sh) |
+| [hardenCron](https://github.com/JonmarCorpuz/hardenIT/blob/main/Scripts/hardenCron.sh) | [hardenProcesses](https://github.com/JonmarCorpuz/hardenIT/blob/main/Scripts/hardenProcesses.sh) | [hardenSSH](https://github.com/JonmarCorpuz/hardenIT/blob/main/Scripts/hardenSSH.sh) | [hardenBootloader](https://github.com/JonmarCorpuz/hardenIT/blob/main/Scripts/hardenBootloader.sh) | [hardenNetwork](https://github.com/JonmarCorpuz/hardenIT/blob/main/Scripts/hardenNetwork.sh) | [hardenBanners](https://github.com/JonmarCorpuz/hardenIT/blob/main/Scripts/hardenBanners.sh)
 
 | Hardened Component | Description | Enable in settings.conf |
 | --- | --- | --- |

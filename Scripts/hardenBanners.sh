@@ -15,7 +15,7 @@ set +o allexport
 # ==== HARDEN BANNERS =======================================================================
 
 # Ensure access to /etc/motd is configured
-if file /etc/motd &> /dev/null;
+if ls -l /etc/motd &> /dev/null;
 then
   motdPermissionCheck=$([ -e /etc/motd ] && stat -Lc 'Access: (%#a/%A)  Uid: ( %u/ %U) Gid: { %g/ %G)' /etc/motd)
   if [[ $motdPermissionCheck != *"0644/-rw-r--r--"* && $motdPermissionCheck !=  *"Uid: ( 0/ root) Gid: ( 0/ root)"* ]];
@@ -42,7 +42,7 @@ else
 fi
 
 # Ensure access to /etc/issue is configured
-if file /etc/issue &> /dev/null;
+if ls -l /etc/issue &> /dev/null;
 then
   issuePermissionCheck=$(stat -Lc 'Access: (%#a/%A)  Uid: ( %u/ %U) Gid: { %g/ %G)' /etc/issue )
   if [[ $issuePermissionCheck != *"0644/-rw-r--r--"* && $issuePermissionCheck !=  *"Uid: ( 0/ root) Gid: ( 0/ root)"* ]];
@@ -54,6 +54,7 @@ then
       echo -e "${YELLOW}[WARNING]${WHITE} Modifying permissions for /etc/issue to conform with the CIS Benchmark"
       sudo chown root:root $(readlink -e /etc/issue) &> /dev/null
       sudo chmod u-x,go-wx $(readlink -e /etc/issue) &> /dev/null
+      echo -e "${GREEN}[SUCCESS]${WHITE} Permissions for /etc/issue was successfully modified and now conform with the CIS Benchmark"
     fi
 
     if [[ $differenceEnabled = "true" ]];
@@ -69,7 +70,7 @@ else
 fi
 
 # Ensure access to /etc/issue is configured
-if file /etc/issue.net &> /dev/null;
+if ls -l /etc/issue.net &> /dev/null;
 then
   issueNet_PermissionCheck=$(stat -Lc 'Access: (%#a/%A)  Uid: ( %u/ %U) Gid: { %g/ %G)' /etc/issue.net )
   if [[ $issueNet_PermissionCheck != *"0644/-rw-r--r--"* && $issueNet_PermissionCheck !=  *"Uid: ( 0/ root) Gid: ( 0/ root)"* ]];

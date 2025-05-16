@@ -51,6 +51,8 @@ sudo chmod +x ./Scripts/*
 
 # ==== MAIN BODY ============================================================================
 
+echo ""
+
 if [[ $CRON_HARDENING =~ true ]];
 then
   echo -e "${GREY}[NOTICE]${WHITE} Hardening cron"
@@ -72,17 +74,24 @@ then
   echo ""
 fi
 
-if [[ $CRON_HARDENING =~ true ]];
+if [[ $PAM_HARDENING =~ true ]];
 then
-  echo -e "${GREY}[NOTICE]${WHITE} Hardening cron"
-  ./Scripts/hardenCron.sh
+  echo -e "${GREY}[NOTICE]${WHITE} Hardening PAM"
+  ./Scripts/hardenPAM.sh
   echo ""
 fi
 
-if [[ $_HARDENING =~ true ]];
+if [[ $BOOTLOADER_HARDENING =~ true ]];
 then
-  echo -e "${GREY}[NOTICE]${WHITE} Hardening cron"
-  ./Scripts/hardenCron.sh
+  echo -e "${GREY}[NOTICE]${WHITE} Hardening the bootloader"
+  ./Scripts/hardenBootloader.sh
+  echo ""
+fi
+
+if [[ $NETWORK_HARDENING =~ true ]];
+then
+  echo -e "${GREY}[NOTICE]${WHITE} Hardening the network"
+  ./Scripts/hardenNetwork.sh
   echo ""
 fi
 

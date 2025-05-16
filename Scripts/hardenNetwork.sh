@@ -39,7 +39,7 @@ set +o allexport
          if [[ $differenceEnabled = "true" ]];
          then 
            l_output2="$l_output2\n${RED}[FAIL]${WHITE} \"$l_kpname\" is incorrectly set to \"$l_krp\" in the running configuration and should have a value of: \"$l_kpvalue\"" 
-           echo -e "${GREY}[DEBUG]${WHITE} \"$l_kpname\" is incorrectly set to \"$l_krp\" in the running configuration and should have a value of: \"$l_kpvalue\"" 
+           echo -e "* ${GREY}[DEBUG]${WHITE} \"$l_kpname\" is incorrectly set to \"$l_krp\" in the running configuration and should have a value of: \"$l_kpvalue\"" 
          fi
       fi 
       unset A_out; declare -A A_out # Check durable setting (files) 
@@ -86,7 +86,11 @@ set +o allexport
          done < <(grep -Po -- "^\h*$l_kpname\h*=\h*\H+" "${A_out[@]}") 
       else 
          l_output2="$l_output2\n* ${GREY}[DEBUG]${WHITE} \"$l_kpname\" is not set in an included file\n* ${GREY}[DEBUG]${WHITE} \"$l_kpname\" May be set in a file that's ignored by load procedure" 
-         echo -e "* ${GREY}[DEBUG]${WHITE} \"$l_kpname\" is not set in an included file\n* ${GREY}[DEBUG]${WHITE} \"$l_kpname\" May be set in a file that's ignored by load procedure" 
+         
+         if [[ $differenceEnabled = "true" ]];
+         then 
+           echo -e "* ${GREY}[DEBUG]${WHITE} \"$l_kpname\" is not set in an included file\n* ${GREY}[DEBUG]${WHITE} \"$l_kpname\" May be set in a file that's ignored by load procedure" 
+         fi 
       fi 
    } 
    while IFS="=" read -r l_kpname l_kpvalue; 

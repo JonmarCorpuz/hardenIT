@@ -15,7 +15,7 @@ set +o allexport
 # ==== HARDEN BOOTLOADER ====================================================================
 
 # Ensure access to bootloader config is configured
-if file /boot/grub/grub.cfg &> /dev/null;
+if ls -l /boot/grub/grub.cfg $&> /dev/null;
 then
   bootloaderPermissionCheck=$(stat -Lc 'Access: (%#a/%A)  Uid: ( %u/ %U) Gid: ( %g/ %G)' /boot/grub/grub.cfg)
   if [[ $bootloaderPermissionCheck != *"0600/-rw-------"* && $bootloaderPermissionCheck != *"Uid: ( 0/ root) Gid: ( 0/ root)"* ]];

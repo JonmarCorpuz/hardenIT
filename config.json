@@ -1,0 +1,17 @@
+{
+    "EnableFirewall": true,
+    "RemoteRegistry": 4,
+    "PasswordComplexity": 1,
+    "Geolocation": 4,
+    "AccountLockoutDuration": 15,
+    "LanmanServer": 4,
+    "MaximumPasswordAge": 15,
+    "AuditPolicySuccess": "enable",
+    "AuditPolicyFailure": "disable",
+    "DisableAutoplay": true,
+    "DisableRemoteDesktop": true,
+    "EnableUAC": true,
+    "DisableAnonymousShareAccess": true,
+    "IPv6": false,
+    "SSDPDiscovery": 4
+}
